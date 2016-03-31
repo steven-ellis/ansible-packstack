@@ -1,0 +1,23 @@
+[centos-7-base-cached]
+name = Baseline Centos 7 cached packages
+baseurl = http://{{repo_host}}/repo/centos-7-base-rpms
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled = 1
+gpgcheck = 1
+
+
+[centos-7-extras-cached]
+name = Baseline Centos 7 extras cached packages
+baseurl = http://{{repo_host}}/repo/centos-7-extras-rpms
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled = 1
+gpgcheck = 1
+
+
+[centos-7-updates-cached]
+name = Baseline Centos 7 Updates cached packages
+baseurl = http://{{repo_host}}/repo/centos-7-updates-rpms
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+enabled = 1
+gpgcheck = 1
+

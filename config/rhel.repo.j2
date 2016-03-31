@@ -1,0 +1,35 @@
+[rhel-7-server-cached]
+name = Baseline RHEL7 cached packages
+baseurl = http://{{repo_host}}/repo/rhel-7-server-rpms
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+enabled = 1
+sslcacert = /etc/rhsm/ca/redhat-uep.pem
+gpgcheck = 1
+
+
+[rhel-7-server-extras-cached]
+name = Baseline RHEL7 extras cached packages
+baseurl = http://{{repo_host}}/repo/rhel-7-server-extras-rpms
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+enabled = 0
+sslcacert = /etc/rhsm/ca/redhat-uep.pem
+gpgcheck = 1
+
+
+[rhel-7-server-rh-common-cached]
+name = Baseline RHEL7 Common cached packages
+baseurl = http://{{repo_host}}/repo/rhel-7-server-rh-common-rpms
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+enabled = 1
+sslcacert = /etc/rhsm/ca/redhat-uep.pem
+gpgcheck = 1
+
+
+[rhel-7-server-optional-cached]
+name = Baseline RHEL7 Optional cached packages
+baseurl = http://{{repo_host}}/repo/rhel-7-server-optional-rpms
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+enabled = 1
+sslcacert = /etc/rhsm/ca/redhat-uep.pem
+gpgcheck = 1
+
