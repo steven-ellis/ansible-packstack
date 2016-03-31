@@ -13,7 +13,9 @@ You'll need to specify your inventory `hosts.rhel` file that contains the host y
 openstack
 ```
 
-Execute playbook across my RHEL hosts
+Override the variable `repo_host` to specify the location of your local yum repository.
+
+To execute the playbook across my RHEL hosts
 ```
 ansible-playbook -i hosts.rhel -v packstack.yaml
 ```
