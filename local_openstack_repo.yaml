@@ -24,7 +24,7 @@
            --setopt="rhel-7-server-openstack-7.0-director-cached.priority=1"
   when: (ansible_distribution == "RedHat" and ansible_distribution_major_version == "7")
 
-- name: Set our Yum Priorities on CentOS 7 and RDO Liberty
+- name: Set our Yum Priorities on CentOS 7 and RDO Mitaka
   command: yum-config-manager \
-           --setopt="centos-7-openstack-liberty-cached.priority=1"
+           --setopt="centos-7-openstack-mitaka-cached.priority=1"
   when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
