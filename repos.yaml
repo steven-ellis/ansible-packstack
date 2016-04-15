@@ -1,0 +1,14 @@
+---
+- hosts: all
+  vars:
+    repo_host: 192.168.122.1
+  remote_user: root
+  tasks:
+
+  - name: Make sure we have yum-utils
+    yum: name=yum-utils state=latest
+
+  - name: Make sure we have yum-plugin-priorities
+    yum: name=yum-plugin-priorities state=latest
+
+  - include: local_repo.yaml

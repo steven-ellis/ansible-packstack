@@ -17,8 +17,14 @@ Override the variable `repo_host` to specify the location of your local yum repo
 
 To execute the playbook across my RHEL hosts
 ```
-ansible-playbook -i hosts.rhel -v packstack.yaml
+ansible-playbook -i hosts.rhel packstack.yaml
 ```
+
+If I only want to enable my locally cached set of base OS RPMS
+```
+ansible-playbook -i hosts.rhel repos.yaml
+```
+
 
 ## Includes
 The includes configure the local respositories on the packstack hosts
