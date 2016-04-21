@@ -1,14 +1,14 @@
-[rhel-7-server-openstack-7.0-cached]
-name = Baseline RHEL7 OSP7 cached packages
-baseurl = http://{{repo_host}}/repo/rhel-7-server-openstack-7.0-rpms
+[rhel-7-server-openstack-8-cached]
+name = Baseline RH OSP8 cached packages
+baseurl = http://{{repo_host}}/repo/rhel-7-server-openstack-8-rpms
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 enabled = 1
 sslcacert = /etc/rhsm/ca/redhat-uep.pem
 gpgcheck = 1
 
 
-[rhel-7-server-openstack-7.0-director-cached]
-name = Baseline RHEL7 OSP7 Director cached packages
+[rhel-7-server-openstack-8-director-cached]
+name = Baseline RH OSP8 Director cached packages
 baseurl = http://{{repo_host}}/repo/rhel-7-server-openstack-7.0-director-rpms
 gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 enabled = 0
