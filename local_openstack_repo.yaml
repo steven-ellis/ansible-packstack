@@ -20,11 +20,11 @@
 
 - name: Set our Yum Priorities on RHEL OSP 7
   command: yum-config-manager \
-           --setopt="rhel-7-server-openstack-7.0-cached.priority=1" \
-           --setopt="rhel-7-server-openstack-7.0-director-cached.priority=1"
+           --setopt="rhel-7-server-openstack-8.priority=1" \
+           --setopt="rhel-7-server-openstack-8-director.priority=1"
   when: (ansible_distribution == "RedHat" and ansible_distribution_major_version == "7")
 
 - name: Set our Yum Priorities on CentOS 7 and RDO Mitaka
   command: yum-config-manager \
-           --setopt="centos-7-openstack-mitaka-cached.priority=1"
+           --setopt="centos-7-openstack-mitaka.priority=1"
   when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
