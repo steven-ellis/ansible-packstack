@@ -1,0 +1,15 @@
+#
+# Role to install and run packstack on the specified hosts
+# Assumes that appropriate content repositories have been configured
+# 
+---
+
+  - name: upgrade all packages
+    yum: name=* state=latest
+
+  - name: install the Packstack from Red Hat RHEL-OSP repository or from RDO on Centos
+    yum: name=openstack-packstack state=latest
+
+  - name: Execute Packstack
+    command: packstack --allinone --cinder-volumes-create=n
+
