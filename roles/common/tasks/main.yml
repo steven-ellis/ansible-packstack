@@ -1,14 +1,13 @@
----
 #
 # Common tasks required for all managed hosts
-# 
+#
 # Need to make sure we have latest version of
 # yum-utils and yum-plugin-priorities
 #
+---
 
-  - name: Make sure we have yum-utils
-    yum: name=yum-utils state=latest
+- name: Make sure we have yum-utils
+  yum: name=yum-utils state=latest
 
-  - name: Make sure we have yum-plugin-priorities
-    yum: name=yum-plugin-priorities state=latest
-
+- name: Make sure we have yum-plugin-priorities
+  yum: name=yum-plugin-priorities state=latest

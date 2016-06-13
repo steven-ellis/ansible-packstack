@@ -8,6 +8,5 @@
     repo_host: 192.168.122.1
   remote_user: root
   roles:
-   - common
-   - local_repo
-
+    - common
+    - local_repo

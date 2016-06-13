@@ -10,21 +10,25 @@
 #  centos_rdo.repo.j2
 #
 
-- name: write the yum config file to pull from our RHEL-OSP yum repo cache if installing on RHEL 7
+- name: write the yum config to pull from our RHEL-OSP yum repo cache for RHEL 7
   template: src=rhel_osp.repo.j2 dest=/etc/yum.repos.d/local_osp.repo
-  when: (ansible_distribution == "RedHat" and ansible_distribution_major_version == "7")
+  when: (ansible_distribution == "RedHat" and
+         ansible_distribution_major_version == "7")
 
-- name: write the yum config file to pull from our RDO Liberty yum repo cache if installing on CentOS 7
+- name: write the yum config to pull from our RDO yum repo cache for CentOS 7
   template: src=centos_rdo.repo.j2 dest=/etc/yum.repos.d/local_rdo.repo
-  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
+  when: (ansible_distribution == "CentOS" and
+         ansible_distribution_major_version == "7")
 
 - name: Set our Yum Priorities on RHEL OSP 7
   command: yum-config-manager \
            --setopt="rhel-7-server-openstack-8.priority=1" \
            --setopt="rhel-7-server-openstack-8-director.priority=1"
-  when: (ansible_distribution == "RedHat" and ansible_distribution_major_version == "7")
+  when: (ansible_distribution == "RedHat" and
+         ansible_distribution_major_version == "7")
 
 - name: Set our Yum Priorities on CentOS 7 and RDO Mitaka
   command: yum-config-manager \
            --setopt="centos-7-openstack-mitaka.priority=1"
-  when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
+  when: (ansible_distribution == "CentOS" and
+         ansible_distribution_major_version == "7")
