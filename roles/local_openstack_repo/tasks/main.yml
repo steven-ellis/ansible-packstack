@@ -6,16 +6,16 @@
 # package repositories
 #
 # Requires
-#  config/rhel_osp.repo.j2
-#  config/centos_rdo.repo.j2
+#  rhel_osp.repo.j2
+#  centos_rdo.repo.j2
 #
 
 - name: write the yum config file to pull from our RHEL-OSP yum repo cache if installing on RHEL 7
-  template: src=config/rhel_osp.repo.j2 dest=/etc/yum.repos.d/local_osp.repo
+  template: src=rhel_osp.repo.j2 dest=/etc/yum.repos.d/local_osp.repo
   when: (ansible_distribution == "RedHat" and ansible_distribution_major_version == "7")
 
 - name: write the yum config file to pull from our RDO Liberty yum repo cache if installing on CentOS 7
-  template: src=config/centos_rdo.repo.j2 dest=/etc/yum.repos.d/local_rdo.repo
+  template: src=centos_rdo.repo.j2 dest=/etc/yum.repos.d/local_rdo.repo
   when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
 
 - name: Set our Yum Priorities on RHEL OSP 7
