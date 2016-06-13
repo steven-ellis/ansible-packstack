@@ -1,14 +1,13 @@
+#
+# Add our local yum repository to a specified inventory
+#
+#
 ---
 - hosts: all
   vars:
     repo_host: 192.168.122.1
   remote_user: root
-  tasks:
+  roles:
+   - common
+   - local_repo
 
-  - name: Make sure we have yum-utils
-    yum: name=yum-utils state=latest
-
-  - name: Make sure we have yum-plugin-priorities
-    yum: name=yum-plugin-priorities state=latest
-
-  - include: local_repo.yaml

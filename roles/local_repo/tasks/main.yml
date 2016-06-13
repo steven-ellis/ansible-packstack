@@ -1,20 +1,20 @@
 ---
 #
-# These tasks point a given host at our local package cache
+# This role points a given host at our local package cache
 # and prioritise that cache above the main Red Hat or Centos
 # package repositories
 #
 # Requires
-#  config/rhel.repo.j2
-#  config/centos.repo.j2
+#  rhel.repo.j2
+#  centos.repo.j2
 #
 
 - name: write the yum config file to pull from our yum repo cache if installing on RHEL 7
-  template: src=config/rhel.repo.j2 dest=/etc/yum.repos.d/local.repo
+  template: src=rhel.repo.j2 dest=/etc/yum.repos.d/local.repo
   when: (ansible_distribution == "RedHat" and ansible_distribution_major_version == "7")
 
 - name: write the yum config file to pull from our yum repo cache if installing on CentOS 7
-  template: src=config/centos.repo.j2 dest=/etc/yum.repos.d/local.repo
+  template: src=centos.repo.j2 dest=/etc/yum.repos.d/local.repo
   when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
 
 - name: Set our Yum Priorities on RHEL 7
