@@ -26,19 +26,23 @@ ansible-playbook -i hosts.rhel repos.yaml
 ```
 
 
-## Includes
-The includes configure the local respositories on the packstack hosts
+## Roles
 
-* local_repo.yaml - Base OS repositories
-* local_openstack_repo.yaml - OpenStack specific repositories
- 
-## Configuration Files
+This has been split out into a series of Roles to allow for better re-use
+
+* common - Standard Yum configuration requirements
+* local_openstack_repo - Cached OpenStack specific repositories
+* local_repo - Cached Base OS Repositories
+* openstack_repo - Add the standard RH OSP or RDO Repositories
+* packstack - install and run packstack
+
+## Configuration Files / Templates
 These contain the local yum repositories config files to reduce internet traffic.
 
-* Base RHEL or Centos repositories
+* Base RHEL or Centos repositories - under roles/local_repo/templates
   * centos.repo.j2
   * rhel.repo.j2
-* Red Hat OpenStack or RDO repositories
+* Red Hat OpenStack or RDO repositories - under roles/local_openstack_repo/templates
   * centos_rdo.repo.j2
   * rhel_osp.repo.j2
 
