@@ -6,8 +6,10 @@
 #
 ---
 
-- name: Make sure we have yum-utils
-  yum: name=yum-utils state=latest
-
-- name: Make sure we have yum-plugin-priorities
-  yum: name=yum-plugin-priorities state=latest
+- name: Make sure we have yum-utils and yum-plugin-priorities
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - yum-utils
+    - yum-plugin-priorities
